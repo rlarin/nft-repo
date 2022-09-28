@@ -1,0 +1,17 @@
+{
+  "name": "@workspace/root",
+  "private": true,
+  "scripts": {
+    "graph": "npx nx graph",
+    "lerna bootstrap": "lerna bootstrap",
+    "lerna build": "npx lerna run build",
+    "lerna create": "lerna create [package_name]",
+    "dev web": "lerna exec --scope @workspace/nft-web -- yarn dev"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^5.5.2"
+  }
+}
