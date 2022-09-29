@@ -1,0 +1,52 @@
+Arguments: 
+  /usr/local/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js run hardhat accounts
+
+PATH: 
+  /Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.15.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/rlarin/Work/Personal/NTF/nft-repo/packages/sol-wave-portal/package.json: Unexpected token } in JSON at position 548
+      at JSON.parse (<anonymous>)
+      at /opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:310:30)
+      at /opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "sol-wave-portal",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "hardhat accounts": "npx hardhat accounts",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@nomicfoundation/hardhat-chai-matchers": "^1.0.3",
+      "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+      "@nomiclabs/hardhat-ethers": "^2.1.1",
+      "chai": "^4.3.6",
+      "ethers": "^5.7.1",
+      "hardhat": "^2.11.2",
+      "ts-node": "^10.4.0",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
