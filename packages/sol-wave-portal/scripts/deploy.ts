@@ -1,23 +1,29 @@
-import { ethers } from "hardhat";
+import hre from "hardhat";
 
-async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+(async () => {
+    const main = async () => {
+        const [deployer] = await hre.ethers.getSigners();
+        const accountBalance = await deployer.getBalance();
 
-  const lockedAmount = ethers.utils.parseEther("1");
+        console.log("Deploying contracts with account: ", deployer.address);
+        console.log("Account balance: ", accountBalance.toString());
 
-  const Lock = await ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+        const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
+        const waveContract = await waveContractFactory.deploy();
+        await waveContract.deployed();
 
-  await lock.deployed();
+        console.log("WavePortal address: ", waveContract.address);
+    }
 
-  console.log(`Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`);
-}
+    const runMain = async () => {
+        try {
+            await main();
+            process.exit(0); // exit Node process without error
+        } catch (error) {
+            console.log(error);
+            process.exit(1); // exit Node process while indicating 'Uncaught Fatal Exception' error
+        }
+    }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+    await runMain();
+})();
