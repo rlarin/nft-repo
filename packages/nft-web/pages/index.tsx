@@ -19,8 +19,12 @@ const Home: NextPage = () => {
         </h1>
 
         <h3 className={styles.description}>
-          👋 Hey there! I am Rainer and I’m not insane. My mother had me tested. 😅
+          👋 Hey there! I am Rainer and I ❤️ buildspace
         </h3>
+          <blockquote>
+              I’m not insane. My mother had me tested. 😅 <br />
+              —Sheldon Cooper (Jim Parsons), The Big Bang Theory
+          </blockquote>
 
 
         <div className={styles.grid}>
