@@ -7,7 +7,10 @@
     "hardhat accounts": "npx hardhat accounts",
     "hardhat compile": "npx hardhat compile",
     "hardhat test": "npx hardhat test",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run.ts": "npx hardhat run scripts/run.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hardhat node": "npx hardhat node",
+    "hardhat deploy": "npx hardhat run scripts/deploy.ts --network localhost"
   },
   "keywords": [],
   "author": "",
