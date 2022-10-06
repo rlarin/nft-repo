@@ -1,5 +1,6 @@
 import {HardhatUserConfig, task} from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+require("dotenv").config();
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -13,6 +14,16 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
 const config: HardhatUserConfig = {
   solidity: "0.8.17",
+  networks: {
+    goerli: {
+      url: process.env.QUICKNODE_API_KEY_URL,
+      accounts: [process.env.GOERLI_PRIVATE_KEY as string],
+    },
+    mainnet: {
+      url: process.env.PROD_QUICKNODE_KEY,
+      accounts: [process.env.PROD_PRIVATE_KEY as string],
+    },
+  },
 };
 
 export default config;
