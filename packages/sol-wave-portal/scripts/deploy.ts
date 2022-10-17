@@ -12,7 +12,7 @@ import hre from "hardhat";
         const waveContract = await waveContractFactory.deploy();
         await waveContract.deployed();
 
-        console.log("WavePortal address: ", waveContract.address);
+        console.log("WavePortal Contract deployed to address: ", waveContract.address);
     }
 
     const runMain = async () => {
