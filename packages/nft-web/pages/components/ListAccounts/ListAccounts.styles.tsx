@@ -1,6 +1,6 @@
 import {List, styled} from "@mui/material";
 
-export const StyledListAccounts = styled(List)(({theme}) => {
+const StyledListAccounts = styled(List)(({theme}) => {
   return {
     width: '100%',
     maxWidth: '400px',
@@ -32,3 +32,5 @@ export const StyledListAccounts = styled(List)(({theme}) => {
     },
   };
 });
+
+export default StyledListAccounts;

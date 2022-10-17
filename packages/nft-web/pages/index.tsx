@@ -3,9 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import {Box, Button, CircularProgress, Link, Typography} from "@mui/material";
-import {useCallback, useEffect, useState} from "react";
-import {AccountsData} from "./interfaces/interfaces";
-import ListAccounts from "./components/ListAccounts/ListAccounts";
+import {useEffect, useState} from "react";
+import ListAccounts, {AccountsData} from "./components/ListAccounts/ListAccounts";
 import {ethers} from "ethers";
 import abi from "./utils/WavePortal.json";
 

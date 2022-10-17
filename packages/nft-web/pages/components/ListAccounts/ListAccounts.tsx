@@ -1,7 +1,11 @@
 import {ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader, Typography} from "@mui/material";
-import {AccountsData} from "../../interfaces/interfaces";
 import AccountBalanceWalletTwoToneIcon from '@mui/icons-material/AccountBalanceWalletTwoTone';
-import {StyledListAccounts} from "./ListAccounts.styles";
+import StyledListAccounts from "./ListAccounts.styles";
+
+export interface AccountsData {
+    currentAccount?: string;
+    accounts: string[];
+}
 
 const ListAccounts = ({accounts}: AccountsData) => {
   return (
@@ -10,7 +14,7 @@ const ListAccounts = ({accounts}: AccountsData) => {
             <Typography>Accounts:</Typography>
         </ListSubheader>
       }>
-            {accounts.map((account) => {
+            {accounts?.map((account) => {
                 return (
                     <ListItem key={account}>
                         <ListItemButton>
